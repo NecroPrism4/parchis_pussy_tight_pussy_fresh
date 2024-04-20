@@ -945,9 +945,9 @@ class Ludo:
                     if  counter_coin == 106:
                         
                         if self.robo_prem == 1 and color_coin == "red":
-                            messagebox.showinfo("Destino LLeagado","Hey llegue al destino")
+                            messagebox.showinfo("Destino LLeagado","HAHA!, llegue al destino")
                         else:
-                            messagebox.showinfo("Destino LLeagado","Felicidades! Estan en el destino")
+                            messagebox.showinfo("Destino LLeagado","Felicidades! Una de tus fichas llego al destino")
                         if path_counter == 6:
                             self.six_with_overlap = 1
                         else:
@@ -1256,8 +1256,9 @@ class Ludo:
 
             if len(self.total_people_play) == 1:
                 messagebox.showinfo("Juego Terminado","Adios!!!!")
-                self.block_value_predict[0][1]['state'] = DISABLED
-                return False
+                exit(0)
+                # self.block_value_predict[0][1]['state'] = DISABLED
+                # return False
             else:
                 self.time_for-=1
         else:
