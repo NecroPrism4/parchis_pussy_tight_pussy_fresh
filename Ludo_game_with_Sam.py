@@ -1,9 +1,11 @@
                                                         # Ludo game Integrated With AI #
+import time
+from random import choice, randint
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image,ImageTk
-import time
-from random import randint, choice
+
+from PIL import Image, ImageTk
+
 
 class Ludo:
     def __init__(self, root,six_side_block,five_side_block,four_side_block,three_side_block,two_side_block,one_side_block):
@@ -107,7 +109,7 @@ class Ludo:
 
         # up 3 box(In white region)
         self.make_canvas.create_rectangle(340+(40*3), 15+240, 340+(40*3)+(40*6), 15+240+40, width=3)
-        self.make_canvas.create_rectangle(340+(40*3), 15+240+40, 340+(40*3)+(40*6)-40, 15+240+80, width=3, fill="yellow")
+        self.make_canvas.create_rectangle(340+(40*3), 15+240+40, 340+(40*3)+(40*6)-40, 15+240+80, width=3, fill="#FFFF00")
         self.make_canvas.create_rectangle(340+(40*3), 15+240+80, 340+(40*3)+(40*6), 15+240+120, width=3)
 
         # down 3 box(In white region)
@@ -228,29 +230,29 @@ class Ludo:
         self.red_number_label.append(red_3_label)
         self.red_number_label.append(red_4_label)
 
-        # Make coin for green right up block
-        green_1_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40, 340+(40*3)+40 + 40, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
-        green_2_coin = self.make_canvas.create_oval(340+(40*3)+40+ 60 + 40+20, 15 + 40, 340+(40*3)+40 + 60 + 40 + 40+20, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
-        green_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 15 + 40 + 100, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
-        green_4_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40 + 100, 340+(40*3)+40 + 40, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
-        self.made_green_coin.append(green_1_coin)
-        self.made_green_coin.append(green_2_coin)
-        self.made_green_coin.append(green_3_coin)
-        self.made_green_coin.append(green_4_coin)
+        # # Make coin for green right up block
+        # green_1_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40, 340+(40*3)+40 + 40, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+        # green_2_coin = self.make_canvas.create_oval(340+(40*3)+40+ 60 + 40+20, 15 + 40, 340+(40*3)+40 + 60 + 40 + 40+20, 15 + 40 + 40, width=3, fill="#00FF00", outline="black")
+        # green_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 15 + 40 + 100, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
+        # green_4_coin = self.make_canvas.create_oval(340+(40*3)+40, 15 + 40 + 100, 340+(40*3)+40 + 40, 15 + 40 + 40 + 100, width=3, fill="#00FF00", outline="black")
+        # self.made_green_coin.append(green_1_coin)
+        # self.made_green_coin.append(green_2_coin)
+        # self.made_green_coin.append(green_3_coin)
+        # self.made_green_coin.append(green_4_coin)
 
-        # Make coin under number label for green right up block
-        green_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
-        green_1_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 5)
-        green_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
-        green_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 5)
-        green_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
-        green_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 100 + 5)
-        green_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
-        green_4_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 100 + 5)
-        self.green_number_label.append(green_1_label)
-        self.green_number_label.append(green_2_label)
-        self.green_number_label.append(green_3_label)
-        self.green_number_label.append(green_4_label)
+        # # Make coin under number label for green right up block
+        # green_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        # green_1_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 5)
+        # green_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        # green_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 5)
+        # green_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        # green_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=15 + 40 + 100 + 5)
+        # green_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="#00FF00", fg="black")
+        # green_4_label.place(x=340 + (40 * 3) + 40 + 10, y=15 + 40 + 100 + 5)
+        # self.green_number_label.append(green_1_label)
+        # self.green_number_label.append(green_2_label)
+        # self.green_number_label.append(green_3_label)
+        # self.green_number_label.append(green_4_label)
 
         # Make coin for sky_blue left down block
         sky_blue_1_coin = self.make_canvas.create_oval(100 + 40, 340+80+15, 100 + 40 + 40, 340+80+40+15, width=3, fill="#04d9ff", outline="black")
@@ -277,28 +279,28 @@ class Ludo:
         self.sky_blue_number_label.append(sky_blue_4_label)
 
         # Make coin for yellow right down block
-        yellow_1_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+15, 340 + (40 * 3) + 40 + 40, 340+80+40+15, width=3, fill="yellow", outline="black")
-        yellow_2_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340+80+15, 340 + (40 * 3) + 40 + 60 + 40 + 40+20, 340+80+40+15, width=3, fill="yellow", outline="black")
-        yellow_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340 + 80 + 60 + 40 + 15, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 340 + 80 + 60 + 40 + 40 + 15, width=3, fill="yellow", outline="black")
-        yellow_4_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+60+40+15, 340 + (40 * 3) + 40 + 40,340+80+60+40+40+15, width=3, fill="yellow", outline="black")
-        self.made_yellow_coin.append(yellow_1_coin)
-        self.made_yellow_coin.append(yellow_2_coin)
-        self.made_yellow_coin.append(yellow_3_coin)
-        self.made_yellow_coin.append(yellow_4_coin)
+        # yellow_1_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+15, 340 + (40 * 3) + 40 + 40, 340+80+40+15, width=3, fill="yellow", outline="black")
+        # yellow_2_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340+80+15, 340 + (40 * 3) + 40 + 60 + 40 + 40+20, 340+80+40+15, width=3, fill="yellow", outline="black")
+        # yellow_3_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40 + 60 + 40 + 20, 340 + 80 + 60 + 40 + 15, 340 + (40 * 3) + 40 + 60 + 40 + 40 + 20, 340 + 80 + 60 + 40 + 40 + 15, width=3, fill="yellow", outline="black")
+        # yellow_4_coin = self.make_canvas.create_oval(340 + (40 * 3) + 40, 340+80+60+40+15, 340 + (40 * 3) + 40 + 40,340+80+60+40+40+15, width=3, fill="yellow", outline="black")
+        # self.made_yellow_coin.append(yellow_1_coin)
+        # self.made_yellow_coin.append(yellow_2_coin)
+        # self.made_yellow_coin.append(yellow_3_coin)
+        # self.made_yellow_coin.append(yellow_4_coin)
 
-        # Make coin under number label for yellow right down block
-        yellow_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="yellow", fg="black")
-        yellow_1_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
-        yellow_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="yellow", fg="black")
-        yellow_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
-        yellow_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="yellow", fg="black")
-        yellow_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
-        yellow_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="yellow", fg="black")
-        yellow_4_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
-        self.yellow_number_label.append(yellow_1_label)
-        self.yellow_number_label.append(yellow_2_label)
-        self.yellow_number_label.append(yellow_3_label)
-        self.yellow_number_label.append(yellow_4_label)
+        # # Make coin under number label for yellow right down block
+        # yellow_1_label = Label(self.make_canvas, text="1", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        # yellow_1_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
+        # yellow_2_label = Label(self.make_canvas, text="2", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        # yellow_2_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 10)
+        # yellow_3_label = Label(self.make_canvas, text="3", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        # yellow_3_label.place(x=340 + (40 * 3) + 40 + 40 + 60 + 30, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
+        # yellow_4_label = Label(self.make_canvas, text="4", font=("Arial", 15, "bold"), bg="yellow", fg="black")
+        # yellow_4_label.place(x=340 + (40 * 3) + 40 + 10, y=30 + (40 * 6) + (40 * 3) + 40 + 100 + 10)
+        # self.yellow_number_label.append(yellow_1_label)
+        # self.yellow_number_label.append(yellow_2_label)
+        # self.yellow_number_label.append(yellow_3_label)
+        # self.yellow_number_label.append(yellow_4_label)
 
         # Make star safe zone
         """
@@ -351,6 +353,10 @@ class Ludo:
         top.geometry("530x300")
         top.maxsize(530,300)
         top.minsize(530,300)
+        # relative path of image
+        bg = PhotoImage(file="Images/menu_bg.png")
+        bg_label = Label(top, image=bg)
+        bg_label.place(x=0, y=0)
         top.config(bg="#141414")
         top.iconbitmap("Images/ludo_icon.ico")
 
@@ -360,27 +366,27 @@ class Ludo:
         # take_entry.place(x=130,y=85)
         # take_entry.focus()
 
-        def filtering():# Total player input value filtering
-            def input_filtering(coin_number):# Input value Filtering
-                try:
-                    return True if (4>=int(coin_number)>=2) or type(coin_number) == int else False
-                except:
-                    return False
+        # def filtering():# Total player input value filtering
+        #     def input_filtering(coin_number):# Input value Filtering
+        #         try:
+        #             return True if (4>=int(coin_number)>=2) or type(coin_number) == int else False
+        #         except:
+        #             return False
 
-            response_take = input_filtering(take_entry.get())
-            if response_take:
-                for player_index in range(int(take_entry.get())):
-                    self.total_people_play.append(player_index)
-                print(self.total_people_play)
-                self.make_command()
-                top.destroy()
-            else:
-                messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
-                top.destroy()
-                self.take_initial_control()
+        #     response_take = input_filtering(take_entry.get())
+        #     if response_take:
+        #         for player_index in range(int(take_entry.get())):
+        #             self.total_people_play.append(player_index)
+        #         print(self.total_people_play)
+        #         self.make_command()
+        #         top.destroy()
+        #     else:
+        #         messagebox.showerror("Input Error", "Please input number of players between 2 and 4")
+        #         top.destroy()
+        #         self.take_initial_control()
 
-        submit_btn = Button(top,text="Submit",bg="#262626",fg="#00FF00",font=("Arial",13,"bold"),relief=RAISED,bd=3,command=filtering,state=DISABLED)
-        submit_btn.place(x=330,y=87)
+        #submit_btn = Button(top,text="Submit",bg="#262626",fg="#f0f0f0",font=("Arial",13,"bold"),relief="groove",bd=3,command=filtering,state=DISABLED)
+        #submit_btn.place(x=330,y=87)
 
         def operate(ind):
             if ind:
@@ -394,37 +400,41 @@ class Ludo:
                     if command_play['text'] != "":
                         command_play.place_forget()
                 
-                    place_ins['text'] = f"  Your game will start within {time_is} sec"
+                    place_ins['text'] = f"  Empezando el juego en {time_is} segundos"
                     place_ins.place(x=20, y=220)
 
                     if time_is > 5:
-                        command_play['text'] = f"             Machine Play With Red and You Play With Sky Blue"
+                        #command_play['text'] = f"             Machine Play With Red and You Play With Sky Blue"
+                        command_play['text'] = f"             Máquina juega con Rojo y tú juegas con Azul Cielo"
                     elif time_is>= 2 and time_is<5:
-                        command_play['text'] = f"                       You Will Get the First Chance to play"
+                        #command_play['text'] = f"                       You Will Get the First Chance to play"
+                        command_play['text'] = f"                       Tendrás la primera oportunidad de jugar"
                     else: 
-                        command_play['text'] = f"                                        Enjoy this Game"
+                        #command_play['text'] = f"                                        Enjoy this Game"
+                        command_play['text'] = f"                                        Disfruta el juego"
                     command_play.place(x=10, y=260)
 
-                time_is = 10
+                countdown = 10
                 place_ins = Label(top, text="", font=("Arial", 20, "bold"), fg="#FF0000", bg="#141414")
                 command_play = Label(top, text="", font=("Arial", 12, "bold"), fg="#af7439", bg="#141414")
 
                 try:
-                    while time_is:
-                        delay_with_instrctions(time_is)
-                        time_is-=1
+                    while countdown:
+                        delay_with_instrctions(countdown)
+                        countdown-=1
                         self.window.update()
                         time.sleep(1)
                     top.destroy()
                 except:
                     print("Force Stop Error in Operate")
                 self.block_value_predict[1][1]['state'] = NORMAL
-            else:
-                submit_btn['state'] = NORMAL
-                take_entry['state'] = NORMAL
+            # else:
+            #     submit_btn['state'] = NORMAL
+            #     take_entry['state'] = NORMAL
         
-        mvc_btn = Button(top,text="Jugar contra bot (2 jugadores)",bg="#262626",fg="#000000",font=("Arial",15,"bold"),relief=RAISED, command=lambda: operate(1), activebackground="#262626", width=100)
-        mvc_btn.place(x=0,y=160)
+        mvc_btn = Button(top,text="Jugar contra bot (2 jugadores)",bg="#858C8D",fg="#F1F4F4", activeforeground="#F1F4F4",font=("Arial",15,"bold"),relief=GROOVE, command=lambda: operate(1), activebackground="#7E7E7E", width=25)
+        mvc_btn.update()
+        mvc_btn.place(x=(top.winfo_width()/2)-150,y=160)
         
 
         top.mainloop()
@@ -618,7 +628,7 @@ class Ludo:
         btn_4 = Button(self.make_canvas,bg="#262626",fg="#00eb00",text="4",font=("Arial",13,"bold","italic"),relief=RAISED,bd=3,command=lambda: self.main_controller("sky_blue",'4'), state=DISABLED, disabledforeground="red")
         btn_4.place(x=60,y=15+(40*6+40*3)+40 + 70+ 40)
 
-        Label(self.make_canvas, text="Player 2", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
+        Label(self.make_canvas, text="Tú", bg="#141414", fg="gold", font=("Arial", 15, "bold")).place(x=12,y=15+(40*6+40*3)+40 + 110+50)
         self.store_instructional_btn(block_predict_sky_blue, predict_sky_blue, [btn_1,btn_2,btn_3,btn_4])
 
     def instruction_btn_yellow(self):
@@ -768,7 +778,7 @@ class Ludo:
                 self.red_coord_store[int(coin_number)-1] = self.red_coin_position[int(coin_number)-1]
 
             else:
-                messagebox.showerror("Wrong choice","Sorry, Your coin in not permitted to travel")
+                messagebox.showerror("Mala elección","Esta moneda no está permitida para moverse")
                 self.num_btns_state_controller(self.block_value_predict[0][2])
 
                 if self.robo_prem == 1:
@@ -813,7 +823,7 @@ class Ludo:
                 self.green_coord_store[int(coin_number) - 1] = self.green_coin_position[int(coin_number) - 1]
 
             else:
-                messagebox.showerror("Wrong choice", "Sorry, Your coin in not permitted to travel")
+                messagebox.showerror("Error", "Esta ficha no puede salir")
                 self.num_btns_state_controller(self.block_value_predict[3][2])
                 return
 
@@ -900,8 +910,8 @@ class Ludo:
             self.block_value_predict[1][1]['state'] = NORMAL
 
         print(self.red_coord_store)
-        print(self.green_coord_store)
-        print(self.yellow_coord_store)
+        # print(self.green_coord_store)
+        # print(self.yellow_coord_store)
         print(self.sky_blue_coord_store)
         if self.robo_prem == 1:
             print("Robo Store is: ", self.robo_store)
